@@ -9,3 +9,8 @@ body {
 *::before {
   box-sizing: border-box;
 }
+
+*{
+    font-family: 'Inter';
+    font-style: normal;
+}

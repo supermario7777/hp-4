@@ -1,0 +1,37 @@
+.body{
+    display: flex;
+    justify-content: space-between;
+    padding: 0px 80px;
+    margin-top: 0px;
+}
+
+.todo, .done, .trash{
+    width: 84px;
+    height: 40px;
+    background: linear-gradient(0deg, rgba(8, 30, 52, 0.05), rgba(8, 30, 52, 0.05)), #F0F0F0;
+    border-radius: 100px;
+    border: none;
+    font-family: 'Inter';
+    font-style: normal;
+    font-weight: 500;
+    font-size: 14px;
+    color: #081E34;
+    cursor: pointer;
+}
+
+.add-new-task{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: linear-gradient(0deg, #081E34, #081E34), #F0F0F0;
+    border-radius: 100px;
+    width: 45px;
+    height: 45px;
+    border: none;
+    cursor: pointer;
+}
+
+.categories{
+    display: flex;
+    gap: 16px;
+}

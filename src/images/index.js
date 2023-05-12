@@ -1,0 +1,1 @@
+export const ADD_IMG = require('./Plus Math.png');
