@@ -1,16 +1,20 @@
 import './App.css';
 import Header from './Components/Header';
-// import Body from './Body';
 import { ADD_IMG, EMPTY_CHECKBOX, MENU } from './Components/images'
 import { v4 } from 'uuid'
 import React, { useState } from 'react'
-import Task from './Tasks/Task/task';
+import Task from './Components/Task/task';
+
 
 export default function App() {
 
   const [isAddModalVisible, setIsAddModalVisible] = useState(false);
 
   const [activeStatus, setActiveStatus] = useState('todo')
+
+  const changeStatus = (status) => {
+    setActiveStatus(status)
+  }
 
   const handleClick = () => {
     changeStatus(activeStatus === 'todo' ? 'todo' : 'done')
@@ -54,12 +58,7 @@ export default function App() {
     }
   ])
 
-  const changeStatus = (status) => {
-    setActiveStatus(status)
-  }
-
   const filteredTasks = tasks.filter((tasks) => tasks.status === activeStatus)
-
 
   return (
     <div>
