@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import './index.css'
 import { BACK_TO_DO, DELETE } from "../../Components/images";
 
-export default function Task({ item, key, tasks, setTasks, activeStatus }) {
+export default function Task({ item, tasks, setTasks, activeStatus}) {
 
   const [isAddModal0Visible, setIsAddModal0Visible] = useState(false);
   const [isAddModal1Visible, setIsAddModal1Visible] = useState(false);

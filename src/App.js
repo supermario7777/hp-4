@@ -51,6 +51,7 @@ export default function App() {
 
   const changeStatus = (status) => {
     setActiveStatus(status)
+    setIsAddModalVisible(false)
   }
 
   const filteredTasks = tasks.filter((tasks) => tasks.status === activeStatus)
@@ -96,8 +97,8 @@ export default function App() {
       <div style={{ display: 'flex', flexDirection: 'column', padding: '64px 90px', gap: '24px' }}>
         <p class='to-do-header'>{headerStatus(activeStatus)}</p>
         {
-          filteredTasks.map((item, index) =>{
-            return <Task item={item} key={index} tasks={tasks} setTasks={setTasks} activeStatus={activeStatus}/>
+          filteredTasks.map((item) =>{
+            return <Task item={item} key={uuidv4()} tasks={tasks} setTasks={setTasks} activeStatus={activeStatus}/>
           })
         }
       </div>
