@@ -9,6 +9,7 @@ import Task from './Components/Task/task';
 export default function App() {
 
   const [isAddModalVisible, setIsAddModalVisible] = useState(false);
+  
 
   const [activeStatus, setActiveStatus] = useState('todo')
 
