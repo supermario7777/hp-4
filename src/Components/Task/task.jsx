@@ -14,6 +14,7 @@ export default function Task({ item, key, tasks, setTasks, activeStatus }) {
     setIsAddModal2Visible(false);
   }
 
+
   const changeStatusToDo = (id) => {
     const itemToDo = tasks.find((item) => item.id === id)
     itemToDo.status = 'todo';
@@ -39,6 +40,17 @@ export default function Task({ item, key, tasks, setTasks, activeStatus }) {
   const [isAddModal2Visible, setIsAddModal2Visible] = useState(false);
 
 
+  const changeStatusToDone = (id) => {
+    const itemToDone = tasks.find((item) => item.id === id)
+    itemToDone.status = 'done';
+    const newTasks = tasks.filter((item) => item.id !== id);
+    setTasks([...newTasks, itemToDone]);
+    setIsAddModal0Visible(false);
+    setIsAddModal1Visible(false);
+    setIsAddModal2Visible(false);
+  }
+
+
 
   return (
     <div>
@@ -48,8 +60,8 @@ export default function Task({ item, key, tasks, setTasks, activeStatus }) {
           else if (activeStatus === 'done') return setIsAddModal1Visible(!isAddModal1Visible)
           else return setIsAddModal2Visible(!isAddModal2Visible)
         }}><img src={item.menu} alt="menu" /></button>
-        <button className='checkbox'><img src={item.chekbox} alt="chekbox" /></button>
-        <p>{item.content}</p>
+        <button className={activeStatus === 'todo' ? 'checkbox' : 'checked-box'} onClick={()=>changeStatusToDone(item.id)}></button>
+        <p className={activeStatus === 'todo' ? 'normal' : 'completed'} >{item.content}</p>
       </div>
       {isAddModal0Visible && (
         <div className="modal-delete">

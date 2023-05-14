@@ -37,7 +37,7 @@ export default function App() {
     {
       id: uuidv4(),
       content: 'Buy One Way Tickets to San Fransico',
-      status: 'done',
+      status: 'todo',
       menu: MENU,
       chekbox: EMPTY_CHECKBOX,
     },
@@ -51,14 +51,7 @@ export default function App() {
     {
       id: uuidv4(),
       content: 'Buy Groceries',
-      status: 'done',
-      menu: MENU,
-      chekbox: EMPTY_CHECKBOX,
-    },
-    {
-      id: uuidv4(),
-      content: 'Trash',
-      status: 'trash',
+      status: 'todo',
       menu: MENU,
       chekbox: EMPTY_CHECKBOX,
     }
