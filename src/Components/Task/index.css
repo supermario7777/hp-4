@@ -59,6 +59,7 @@
     display: flex;
     align-items: center;
     text-decoration: line-through;
+    color: #959595;
 }
 
 .modal-delete{

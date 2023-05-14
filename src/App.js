@@ -8,17 +8,6 @@ import Task from './Components/Task/task';
 
 export default function App() {
 
-  const [isAddModalVisible, setIsAddModalVisible] = useState(false);
-  
-
-  const [activeStatus, setActiveStatus] = useState('todo')
-
-  const changeStatus = (status) => {
-    setActiveStatus(status)
-  }
-
-  // console.log(activeStatus)
-
   const [tasks, setTasks] = useState([
     {
       id: uuidv4(),
@@ -57,6 +46,13 @@ export default function App() {
     }
   ])
 
+  const [isAddModalVisible, setIsAddModalVisible] = useState(false);
+  const [activeStatus, setActiveStatus] = useState('todo')
+
+  const changeStatus = (status) => {
+    setActiveStatus(status)
+  }
+
   const filteredTasks = tasks.filter((tasks) => tasks.status === activeStatus)
 
   const headerStatus = (activeStatus) => {
@@ -64,6 +60,20 @@ export default function App() {
     else if(activeStatus === 'done') return 'Done';
     else return 'Trash';
   };
+  
+  const [newTask, setNewTask] = useState('')
+  const addToDo = () => {
+    setNewTask(newTask)
+    const element = { 
+      id: uuidv4(),
+      content: newTask,
+      status: 'todo',
+      menu: MENU,
+      chekbox: EMPTY_CHECKBOX, 
+    };
+    setTasks([...tasks, element])
+    setIsAddModalVisible(false)
+  }
 
   return (
     <div>
@@ -77,15 +87,14 @@ export default function App() {
         <div style={{ display: 'flex', gap: '25px' }}>
           {isAddModalVisible && (<div className="modal">
             <p>Add New To Do</p>
-            <textarea className="modal-text-area" placeholder="Your text"></textarea>
-            <button className="modal-add-button">Add</button>
+            <textarea className="modal-text-area" placeholder="Your text" onChange={(e)=>setNewTask(e.target.value)}></textarea>
+            <button className="modal-add-button" onClick={()=>addToDo()} >Add</button>
           </div>)}
           <button className="add-new-task" onClick={() => setIsAddModalVisible(!isAddModalVisible)}><img alt="add-btn" src={ADD_IMG} stryle={{ width: '24px', height: '24px' }} /></button>
         </div>
       </div>
       <div style={{ display: 'flex', flexDirection: 'column', padding: '64px 90px', gap: '24px' }}>
         <p class='to-do-header'>{headerStatus(activeStatus)}</p>
-        {/* <Task filteredTasks={filteredTasks} activeStatus={activeStatus} /> */}
         {
           filteredTasks.map((item, index) =>{
             return <Task item={item} key={index} tasks={tasks} setTasks={setTasks} activeStatus={activeStatus}/>

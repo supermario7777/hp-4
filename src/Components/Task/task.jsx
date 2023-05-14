@@ -4,6 +4,10 @@ import { BACK_TO_DO, DELETE } from "../../Components/images";
 
 export default function Task({ item, key, tasks, setTasks, activeStatus }) {
 
+  const [isAddModal0Visible, setIsAddModal0Visible] = useState(false);
+  const [isAddModal1Visible, setIsAddModal1Visible] = useState(false);
+  const [isAddModal2Visible, setIsAddModal2Visible] = useState(false);
+
   const changeStatusToTrash = (id) => {
     const itemToTrash = tasks.find((item) => item.id === id)
     itemToTrash.status = 'trash';
@@ -35,10 +39,6 @@ export default function Task({ item, key, tasks, setTasks, activeStatus }) {
     setIsAddModal2Visible(false);
   }
 
-  const [isAddModal0Visible, setIsAddModal0Visible] = useState(false);
-  const [isAddModal1Visible, setIsAddModal1Visible] = useState(false);
-  const [isAddModal2Visible, setIsAddModal2Visible] = useState(false);
-
 
   const changeStatusToDone = (id) => {
     const itemToDone = tasks.find((item) => item.id === id)
@@ -49,8 +49,6 @@ export default function Task({ item, key, tasks, setTasks, activeStatus }) {
     setIsAddModal1Visible(false);
     setIsAddModal2Visible(false);
   }
-
-
 
   return (
     <div>
