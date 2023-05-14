@@ -69,3 +69,79 @@
     justify-content: center;
     cursor: pointer;
 }
+
+.done-menu{
+    display: flex;
+    flex-direction: column-reverse;
+    justify-content: center;
+    width: 182px;
+    height: 47px;
+    background: #E4E6E7;
+    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.16);
+    border-radius: 12px;
+    gap: 5px;
+}
+
+.move-back-todo{
+    width: 16px;
+    height: 16px;
+    font-family: 'Inter';
+    font-style: normal;
+    font-weight: 500;
+    font-size: 14px;
+    line-height: 18px;
+    color: #353535;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border:none;
+    cursor: pointer;
+    background-color: transparent;
+}
+
+.move-to-do{
+    width: 148px;
+    height: 13px;
+    font-family: 'Inter';
+    font-style: normal;
+    font-weight: 500;
+    font-size: 14px;
+    line-height: 18px;
+    color: #353535;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border:none;
+    cursor: pointer;
+    background-color: transparent;
+}
+
+.trash-menu{
+    display: flex;
+    flex-direction: column-reverse;
+    justify-content: center;
+    width: 200px;
+    height: 47px;
+    background: #E4E6E7;
+    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.16);
+    border-radius: 12px;
+    gap: 5px;
+}
+
+
+.delete-forever{
+    font-family: 'Inter';
+    font-style: normal;
+    font-weight: 500;
+    font-size: 14px;
+    line-height: 18px;
+    color: #353535;
+    border: none;
+    background-color: transparent;
+    height: 16px;
+    width: 119px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+}
